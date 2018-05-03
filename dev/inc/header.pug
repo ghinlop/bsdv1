@@ -1,8 +1,26 @@
 header.header
     .bg-info
         .container
-            .row.align-items-center
-                .col-md-6.--menu_top
+            .row.align-items-center                        
+                .col-md-6.--social
+                    ul.d-inline-flex
+                        li.mr-1
+                            a(href="#")
+                                i.fa.fa-facebook
+                        li.mr-1
+                            a(href="#")
+                                i.fa.fa-google-plus
+                        li.mr-1
+                            a(href="#")
+                                i.fa.fa-youtube
+                        li.mr-1
+                            a(href="#")
+                                i.fa.fa-twitter
+                        li.mr-1
+                            a(href="/register.html")
+                                i.fa.fa-envelope-o.mr-1 
+                                |demo@demo.com
+                .col-md-6.--social.text-md-right
                     ul.d-inline-flex.text-light
                         li.mr-2
                             a(href="/login.html")
@@ -12,40 +30,42 @@ header.header
                             a(href="/register.html")
                                 i.fa.fa-registered.mr-1 
                                 |Register
-                        li.mr-2
-                            a(href="/register.html")
-                                i.fa.fa-envelope-o.mr-1 
-                                |Realestate@Steelthemes.com
-                .col-md-6.text-md-right.--social
-                    ul.d-inline-flex
-                        li.mr-1
-                            a(href="")
-                                i.fa.fa-facebook
-                        li.mr-1
-                            a(href="")
-                                i.fa.fa-google-plus
-                        li.mr-1
-                            a(href="")
-                                i.fa.fa-youtube
-                        li.mr-1
-                            a(href="")
-                                i.fa.fa-twitter
     .bg-white.--header_bottom
-        .container
-            span.--contact_phone_header Call Us Anytime [at] 1-880-002-0088
+        .container.position-relative
+            .--contact_phone_header.text-uppercase.font-weight-bold.p-2
+                span.text-dark.mr-2 Call Us Anytime [at]
+                span.text-info 1-880-002-0088
             .row.align-items-center
                 .col-md-2.--logo
                     a(href="/")
-                        img(src="../dist/images/logo.png", alt="")
-                .col-md-10
-                    ul.--menu_bottom.d-md-flex.w-100.py-md-3
+                        img(src="/dist/images/logo.png", alt="")
+                .col-md-10.text-md-right
+                    ul.--menu_bottom.d-md-inline-flex.py-md-3.text-center
                         li
-                            a(href="/") Home
+                            a(href="/") Trang chủ
+                        li.--js_dropdown(dropdown)
+                            a(href="/") Bán nhà thủ đức
+                            .--sub_drop
+                                ul
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                                    li
+                                        a(href="/") Bán nhà thủ đức
+                        li.--js_dropdown
+                            a(href="/") Bán đất thủ đức
                         li
-                            a(href="/") About US
+                            a(href="/") Cho thuê nhà thủ đức
                         li
-                            a(href="/") News
+                            a(href="/") Thị trường đất
                         li
-                            a(href="/") Products
-                        li
-                            a(href="/").btn.btn-warning Contact
+                            a(href="/") Liên hệ
