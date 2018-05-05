@@ -45,7 +45,7 @@ $(document).ready(() => {
         let inputDate = $('[datepicker]')
         for (let val of inputDate) {
             let getID = $(val).attr('id')
-            console.log(getID)
+            // console.log(getID)
             $(`#${getID}`).datepicker();
         }
     }
@@ -53,7 +53,7 @@ $(document).ready(() => {
     if ($('[getImgHeader]').length > 0) {
         const allImgContent = $('[getImgHeader]').find('img')
         let imgUrl = '/dist/images/post-bg.jpg'
-        console.log(imgUrl.clientHeight)
+        // console.log(imgUrl.clientHeight)
         if (allImgContent.length > 0) {
             imgUrl = allImgContent[0].currentSrc;
         }
