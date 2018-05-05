@@ -1,0 +1,16 @@
+.--auth{
+    @include checkbox(#0088ff);
+    .form-control{
+        &:focus{
+            background: #ddd;
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .modal-title{
+        font-size: 1.3em;
+    }
+}

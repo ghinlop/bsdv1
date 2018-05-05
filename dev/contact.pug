@@ -1,0 +1,46 @@
+extends ./layout/home
+include ./mixin/formcontrol
+include ./mixin/widget
+block title
+    title Contact Page
+block index
+    include ./inc/header
+    include ./inc/imgHeader
+    .container-fluid.pb-5.--item_content(getImgHeader)
+        img.d-none(src="/dist/images/contact.jpg", alt="")
+        .row
+            .col-md-10.offset-md-1.--item_body
+                .row
+                    h1.--item_title.upletter.col-md-12
+                        |Hãy chia sẻ với chúng tôi những thắc mắc của bạn
+                    .--post.col-md-8
+                        form(action="" method="POST")     
+                            .--post_box
+                                .--post_header
+                                    .--post_title-1
+                                        |Thông tin cá nhân
+                                .--post_body
+                                    .row
+                                        .col-md
+                                            .form-group
+                                                input.form-control(type="text", placeholder="Họ tên")
+                                        .col-md
+                                            .form-group
+                                                input.form-control(type="email", placeholder="Địa chỉ email")
+                                        .col-md
+                                            .form-group
+                                                input.form-control(type="number", placeholder="Số điện thoại")
+                            .--post_box
+                                .--post_header
+                                    .--post_title-1
+                                        |Nội dung câu hỏi
+                                .--post_body
+                                    .form-group
+                                        input.form-control(type="text", placeholder="Tiêu đề câu hỏi")
+                                    +contactpage
+                                    .form-group
+                                        textarea.form-control(name="", placeholder="Nội dung câu hỏi")
+                                    .form-group.text-center
+                                        button.btn.btn-lg.btn-primary Gửi câu hỏi
+                    .col-md-4
+                        +wd1

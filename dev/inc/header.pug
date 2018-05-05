@@ -1,71 +1,84 @@
-header.header
-    .bg-info
-        .container
-            .row.align-items-center                        
-                .col-md-6.--social
-                    ul.d-inline-flex
-                        li.mr-1
-                            a(href="#")
-                                i.fa.fa-facebook
-                        li.mr-1
-                            a(href="#")
-                                i.fa.fa-google-plus
-                        li.mr-1
-                            a(href="#")
-                                i.fa.fa-youtube
-                        li.mr-1
-                            a(href="#")
-                                i.fa.fa-twitter
-                        li.mr-1
-                            a(href="/register.html")
-                                i.fa.fa-envelope-o.mr-1 
-                                |demo@demo.com
-                .col-md-6.--social.text-md-right
-                    ul.d-inline-flex.text-light
-                        li.mr-2
-                            a(href="/login.html")
-                                i.fa.fa-sign-in.mr-1 
-                                |Login
-                        li.mr-2
-                            a(href="/register.html")
-                                i.fa.fa-registered.mr-1 
-                                |Register
-    .bg-white.--header_bottom
-        .container.position-relative
-            .--contact_phone_header.text-uppercase.font-weight-bold.p-2
-                span.text-dark.mr-2 Call Us Anytime [at]
-                span.text-info 1-880-002-0088
-            .row.align-items-center
-                .col-md-2.--logo
-                    a(href="/")
-                        img(src="/dist/images/logo.png", alt="")
-                .col-md-10.text-md-right
-                    ul.--menu_bottom.d-md-inline-flex.py-md-3.text-center
-                        li
-                            a(href="/") Trang chủ
-                        li.--js_dropdown(dropdown)
-                            a(href="/") Bán nhà thủ đức
-                            .--sub_drop
-                                ul
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                                    li
-                                        a(href="/") Bán nhà thủ đức
-                        li.--js_dropdown
-                            a(href="/") Bán đất thủ đức
-                        li
-                            a(href="/") Cho thuê nhà thủ đức
-                        li
-                            a(href="/") Thị trường đất
-                        li
-                            a(href="/") Liên hệ
+header.header.container-fluid
+    .row
+        .col-12.order-md-1.order-2.bg-info
+                .container
+                    .row.align-items-center                        
+                        .col-md-6.d-md-block.d-none.--social
+                            ul.d-inline-flex.none-style-list
+                                li.mr-1
+                                    a(href="#")
+                                        i.fa.fa-facebook
+                                li.mr-1
+                                    a(href="#")
+                                        i.fa.fa-google-plus
+                                li.mr-1
+                                    a(href="#")
+                                        i.fa.fa-youtube
+                                li.mr-1
+                                    a(href="#")
+                                        i.fa.fa-twitter
+                                li.mr-1
+                                    a(href="/register.html")
+                                        i.fa.fa-envelope-o.mr-1 
+                                        |demo@demo.com
+                        .col-md-6.col-12.--social.text-md-right
+                            ul.d-md-inline-flex.d-flex.text-light.none-style-list
+                                li.mr-2
+                                    a(href="#", data-toggle='modal', data-target='#loginModal')
+                                        i.fa.fa-sign-in.mr-1 
+                                        |Login
+                                li.mr-2
+                                    a(href="#", data-toggle='modal', data-target='#registerModal')
+                                        i.fa.fa-registered.mr-1 
+                                        |Register
+                                li
+                                    a(href="/post.html").warning
+                                        i.fa.fa-pencil.mr-1 
+                                        |Đăng bài nhanh
+        .col-12.order-md-2.order-1   
+            .--header_bottom
+                .container.position-relative
+                    .--contact_phone_header.text-uppercase.font-weight-bold.p-2.d-md-block.d-none
+                        span.text-dark.mr-2 Call Us Anytime [at]
+                        span.text-info 1-880-002-0088
+                    .row.align-items-center
+                        .col-md-2.--logo
+                            a(href="/").py-md-0.py-2.text-md-left.text-center
+                                img(src="/dist/images/logo.png", alt="")
+                        aside.col-md-10.col-12.text-md-right.text-left
+                            ul#menubar.--menu_bottom.d-md-inline-flex.py-md-3.text-md-center.none-style-list(jqueryScroll)
+                                li
+                                    a(href="/") Trang chủ
+                                li.--js_dropdown(dropdown)
+                                    a(href="/") Bán nhà thủ đức
+                                    .--sub_drop
+                                        ul.none-style-list
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                            li
+                                                a(href="/") Bán nhà thủ đức
+                                li.--js_dropdown
+                                    a(href="/") Bán đất thủ đức
+                                li
+                                    a(href="/") Cho thuê nhà thủ đức
+                                li
+                                    a(href="/") Thị trường đất
+                                li
+                                    a(href="/contact.html") Liên hệ
+                                li.d-md-none.d-sm-none.d-inline.close-btn
+                                    a(href="#", toggle="eventCall", tar="aside", overEvent="true")
+                                        i.fa.fa-close.fa-lg
+                
+    #over
+include ./login
+include ./register

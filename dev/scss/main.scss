@@ -1,14 +1,35 @@
 @import "./inc/_mixin.scss";
 @import "./inc/_header.scss";
 @import "./inc/_dropdown.scss";
+@import "./inc/_slider.scss";
+@import "./inc/_body.scss";
+@import "./inc/_tab.scss";
+@import "./inc/_profile.scss";
+@import "./inc/_post.scss";
+@import "./inc/_auth.scss";
+@import "./inc/_footer.scss";
 
 a:hover, a:focus{
     @include effect;
     text-decoration: none;
 }
-ul{
+.none-style-list{
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-
+img{
+    max-width: 100%;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    margin: 0;
+    -moz-appearance: textfield;
+}
+.--scrollbar{
+    max-height: 100px;
+}

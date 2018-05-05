@@ -1,0 +1,114 @@
+extends ./layout/home
+include ./mixin/widget
+block title
+    title Detail Page
+block index
+    include ./inc/header
+    include ./inc/imgHeader
+    .container-fluid.pb-5.--item_content(getImgHeader)
+        .row
+            .col-md-10.offset-md-1.--item_body
+                .row
+                    h1.--item_title.upletter.col-md-12
+                        |Bán nhà riêng tại Đường 10, Phường Hiệp Bình Phước, Thủ Đức, Tp.HCM diện tích 141m2 giá 3720 Triệu.
+                    .col-md-8
+                        .--item_decs
+                            h2.--item_sub
+                                |Mô tả chi tiết
+                            p
+                                |Vị trí thuận tiện đi về Tân Bình, Tân Phú, Bình Tân, Gò Vấp, Q. 10.
+                                |Cách 200m: Siêu thị điện máy Chợ Lớn, điện máy Thiên Hòa, Điện Máy Xanh...
+                                |Cách 700m: Siêu thị Pandora Tân Bình.
+                                |Cách 700m sân bay Tân Sơn Nhất.
+                                |Được Thiết Kế theo phong cách Châu Âu, độc đáo, lấy sáng 100% tự nhiên.
+                                |- Thiết kế đa dạng về diện tích: 64 - 65 - 70 m2.
+                                |- Với lối thiết kế vuông vức,
+                                |- 100% các căn hộ đều có ban công.
+                                |- 100% các căn đều sở hữu diện tích 2 phòng ngủ 2WC.
+                                |
+                                |* Kết nối các quận và trung tâm tiện ích ngoại khu:
+                                |Cách 200m: Siêu thị Điện Máy Chợ Lớn, Điện Máy Thiên Hòa, Điện Máy Xanh, 30 phút thông qua các quận trung tâm 1,5,7,2, không sợ kẹt xe khói bụi.
+                                |Cách 700m: Siêu thị Pandora Tân Bình. Dự án cách sân bay chi tu 10p chỉ 5p di chuyển nhanh chóng đến tuyến Metro 2.
+                                |
+                                |*Tiện ích nội khu:
+                                |Công viên nội bộ, công viên lớn, nhỏ, phòng tập gym, trung tâm TDTT, trường mầm non, Shophouse, hồ bơi tràn bờ, trường quốc tế ngay trong dự án, siêu thị mini, siêu thị thương mại, khuôn viên rộng đến 1600m2, mật độ cây xanh 61% thoáng mát sạch sẽ thích hợp cho mọi gia đình.
+                                |
+                                |Liên hệ tư vấn trực tiếp: 0909 38 02 05.
+                        .--tab_box(tabs-role)
+                            .d-flex
+                                a#tab-1.--tabs_tag.active(href="#tab-1" tab-action) Hình ảnh
+                                a#tab-2.--tabs_tag(href="#tab-2" tab-action) Bản Đồ Vị Trí
+                            div(tabs-content)
+                                #tab-1.--tab_content.active.show
+                                    div(slider="#content-slider" sliderThumb="#content-thumbslider")
+                                        .swiper-container.slider-top#content-slider
+                                            .swiper-wrapper
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-1.jpg", alt="")
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-2.jpg", alt="")
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-3.jpg", alt="")
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-1.jpg", alt="")
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-2.jpg", alt="")
+                                                .swiper-slide
+                                                    .--slider_item
+                                                        img(src="/dist/images/slide-3.jpg", alt="")
+                                            .swiper-button-next
+                                            .swiper-button-prev
+                                        .swiper-container.slider-thumbs.bg-dark#content-thumbslider
+                                            .swiper-wrapper
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-1.jpg", alt="")
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-2.jpg", alt="")
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-3.jpg", alt="")
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-1.jpg", alt="")
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-2.jpg", alt="")
+                                                .swiper-slide
+                                                    img(src="/dist/images/slide-3.jpg", alt="")
+                                #tab-2.--tab_content
+                                    #controls
+                                    #map(mapcontent)
+                        .--profile_contact.my-3
+                            .row
+                                .col-md-4.--avatar.py-2
+                                    img(src="/dist/images/noimage.jpg", alt="")
+                                .col-md-8
+                                    .position-relative.--contact_info.text-md-left.text-center
+                                        h3.--contact_title.py-md-0.py-2
+                                            |Thông Tin Liên hệ
+                                        h4.--contact_name Michel Joe Desosa
+                                        ul.--contact_social.d-inline-flex.none-style-list
+                                            li
+                                                a(href="#")
+                                                    i.fa.fa-facebook
+                                            li
+                                                a(href="#")
+                                                    i.fa.fa-youtube
+                                            li
+                                                a(href="#")
+                                                    i.fa.fa-twitter
+                                        .--contact_bottom
+                                            ul.none-style-list.d-md-flex
+                                                li                               
+                                                    a(href="#").d-block
+                                                        i.fa.fa-phone.mr-2
+                                                        |0933381282
+                                                li
+                                                    a(href="#") 
+                                                        i.fa.fa-envelope-o.mr-2
+                                                        | demo@demo.com
+                                    
+                    .col-md-4
+                        +wd1

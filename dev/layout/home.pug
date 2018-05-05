@@ -7,12 +7,18 @@ html(lang="en")
         link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="/dist/bootstrap/css/bootstrap.min.css")
         link(rel="stylesheet", href="/dist/fa/css/font-awesome.css")
+        link(rel="stylesheet", href="/dist/swiper/css/swiper.min.css")
+        link(rel="stylesheet", href="/dist/jquery/jquery-ui.min.css")
+        link(rel="stylesheet", href="/dist/scrollbar/perfect-scrollbar.css")
         link(rel="stylesheet", href="/dist/main/css/main.css")
-        title Document
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBbduzeobTy7iGqvaNHyPRcO6YH6JfY&callback=initMap")
+        block title
     body
         block index
-        footer.bg-dark
-            .container-fluid
-                |adsadsds
-        script(src="/dist/main/js/jquery-3.3.1.min.js")
+        include ../inc/footer
+        script(src="/dist/jquery/jquery-3.3.1.min.js")
+        script(src="/dist/jquery/jquery-ui.min.js")
+        script(src="/dist/bootstrap/js/bootstrap.min.js")
+        script(src="/dist/swiper/js/swiper.min.js")
+        script(src="/dist/scrollbar/perfect-scrollbar.min.js")
         script(src="/dist/main/js/main.js")

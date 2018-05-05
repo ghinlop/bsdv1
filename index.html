@@ -7,67 +7,449 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/dist/fa/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/dist/swiper/css/swiper.min.css"/>
+    <link rel="stylesheet" href="/dist/jquery/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/dist/scrollbar/perfect-scrollbar.css"/>
     <link rel="stylesheet" href="/dist/main/css/main.css"/>
-    <title>Document</title>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBbduzeobTy7iGqvaNHyPRcO6YH6JfY&amp;callback=initMap"></script>
+    <title>Home Page</title>
   </head>
   <body>
-    <header class="header">
-      <div class="bg-info">
-        <div class="container">
-          <div class="row align-items-center">                       
-            <div class="col-md-6 --social">
-              <ul class="d-inline-flex">
-                <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="mr-1"><a href="/register.html"><i class="fa fa-envelope-o mr-1"> </i>demo@demo.com</a></li>
-              </ul>
+    <header class="header container-fluid">
+      <div class="row">
+        <div class="col-12 order-md-1 order-2 bg-info">
+          <div class="container">
+            <div class="row align-items-center">                       
+              <div class="col-md-6 d-md-block d-none --social">
+                <ul class="d-inline-flex none-style-list">
+                  <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="mr-1"><a href="/register.html"><i class="fa fa-envelope-o mr-1"> </i>demo@demo.com</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-12 --social text-md-right">
+                <ul class="d-md-inline-flex d-flex text-light none-style-list">
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in mr-1"> </i>Login</a></li>
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#registerModal"><i class="fa fa-registered mr-1"> </i>Register</a></li>
+                  <li><a class="warning" href="/post.html"><i class="fa fa-pencil mr-1"> </i>Đăng bài nhanh</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-6 --social text-md-right">
-              <ul class="d-inline-flex text-light">
-                <li class="mr-2"><a href="/login.html"><i class="fa fa-sign-in mr-1"> </i>Login</a></li>
-                <li class="mr-2"><a href="/register.html"><i class="fa fa-registered mr-1"> </i>Register</a></li>
-              </ul>
+          </div>
+        </div>
+        <div class="col-12 order-md-2 order-1">  
+          <div class="--header_bottom">
+            <div class="container position-relative">
+              <div class="--contact_phone_header text-uppercase font-weight-bold p-2 d-md-block d-none"><span class="text-dark mr-2">Call Us Anytime [at]</span><span class="text-info">1-880-002-0088</span></div>
+              <div class="row align-items-center">
+                <div class="col-md-2 --logo"><a class="py-md-0 py-2 text-md-left text-center" href="/"><img src="/dist/images/logo.png" alt=""/></a></div>
+                <aside class="col-md-10 col-12 text-md-right text-left">
+                  <ul class="--menu_bottom d-md-inline-flex py-md-3 text-md-center none-style-list" id="menubar" jqueryScroll="jqueryScroll">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="--js_dropdown" dropdown="dropdown"><a href="/">Bán nhà thủ đức</a>
+                      <div class="--sub_drop">
+                        <ul class="none-style-list">
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="--js_dropdown"><a href="/">Bán đất thủ đức</a></li>
+                    <li><a href="/">Cho thuê nhà thủ đức</a></li>
+                    <li><a href="/">Thị trường đất</a></li>
+                    <li><a href="/contact.html">Liên hệ</a></li>
+                    <li class="d-md-none d-sm-none d-inline close-btn"><a href="#" toggle="eventCall" tar="aside" overEvent="true"><i class="fa fa-close fa-lg"></i></a></li>
+                  </ul>
+                </aside>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-white --header_bottom">
-        <div class="container position-relative">
-          <div class="--contact_phone_header text-uppercase font-weight-bold p-2"><span class="text-dark mr-2">Call Us Anytime [at]</span><span class="text-info">1-880-002-0088</span></div>
-          <div class="row align-items-center">
-            <div class="col-md-2 --logo"><a href="/"><img src="/dist/images/logo.png" alt=""/></a></div>
-            <div class="col-md-10 text-md-right">
-              <ul class="--menu_bottom d-md-inline-flex py-md-3 text-center">
-                <li><a href="/">Trang chủ</a></li>
-                <li class="--js_dropdown" dropdown="dropdown"><a href="/">Bán nhà thủ đức</a>
-                  <div class="--sub_drop">
-                    <ul>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
-                      <li><a href="/">Bán nhà thủ đức</a></li>
+      <div id="over"></div>
+    </header>
+    <div class="--auth modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="loginModalLabel">Đăng nhập</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="username"> <i class="fa fa-user fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="password"> <i class="fa fa-lock fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="password" placeholder="Mật khẩu" aria-label="password" aria-describedby="password"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block mb-2">Đăng Nhập</button>
+                <div class="row align-items-center">
+                  <div class="col-md-6 text-md-left text-center">
+                    <input class="form-control" id="remember" type="checkbox"/>
+                    <label for="remember" checked="checked">Nhớ tài khoản</label>
+                  </div>
+                  <div class="col-md-6 text-md-right text-center"><a href="#">Quên mật khẩu</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Chưa phải là thành viên? <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" aria-label="Close">Đăng ký tài khoản</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="--auth modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="registerModal">Đăng ký tài khoản</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="email" placeholder="Email Address" aria-label="email" aria-describedby="email"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Full Name" aria-label="fullname" aria-describedby="fullname"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="number" placeholder="Phone number" aria-label="phone" aria-describedby="phone"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Password" aria-label="password" aria-describedby="password"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Retype Password" aria-label="repassword" aria-describedby="repassword"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="accept" type="checkbox"/>
+                <label for="accept" checked="checked">Chấp nhận điều khoản tham gia</label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Đăng Nhập</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Đã là thành viên?<a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal" aria-label="Close">Đăng nhập</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <section class="--slider" slider=".slider-top" sliderThumb=".slider-thumbs">
+      <div class="swiper-container slider-top">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-1.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">BÁN ĐẤT ĐƯỜNG 12 P. TAM BÌNH, HẺM XE HƠI 7M CÓ VỈA HÈ, DT 67M2 GIÁ 36tr/m2</h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">Còn một lô duy nhất ngay sát mặt tiền đường 12, Tam Bình, cách đúng 20m. Hẻm nhựa 7m ô tô ra vào thoải mái có vỉa hè, đối diện chung cư SunView Town, vị trí cực đẹp, cao ráo, khu dân cư an ninh và...</figure>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-2.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">BÁN ĐẤT ĐƯỜNG 12 TAM BÌNH LIỀN KỀ VÀNH ĐAI 2, GIÁ 36TR/M2 </h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">Vị trí: Hẻm 26 đường 12, Tam Bình, Thủ Đức. Ngay nút giao Gò Dưa, Kế bên Tô Ngọc Vân và tuyến Vành Đai 2 rộng 67m, tiện di chuyển ra Quốc lộ 13, Quốc lộ 1A. - Hạ tầng đẹp, rất an ninh và...</figure>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-3.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">Nhà mới toanh, CHỈ 2.8TỶ. 1T 3L, 1TUM, DT 56m2, Đường 36, Hiệp Bình Chánh - Thủ... </h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">TẠI SAO PHẢI MUA NHÀ CHUNG CƯ VỚI NỔI LO CHÁY NHÀ LUÔN RÌNH RẬP. TRONG KHI BẰNG SỐ TIỀN CÓ THỂ SỞ HỮU NHÀ NGUYÊN CĂN MỚI TINH KIÊN CỐ 1 TRỆT 3 LẦU, 1TUM VỚI THIẾT KẾ PHONG CÁCH CHÂU ÂU. Cầm...</figure>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-1.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">BÁN ĐẤT ĐƯỜNG 12 P. TAM BÌNH, HẺM XE HƠI 7M CÓ VỈA HÈ, DT 67M2 GIÁ 36tr/m2</h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">Còn một lô duy nhất ngay sát mặt tiền đường 12, Tam Bình, cách đúng 20m. Hẻm nhựa 7m ô tô ra vào thoải mái có vỉa hè, đối diện chung cư SunView Town, vị trí cực đẹp, cao ráo, khu dân cư an ninh và...</figure>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-2.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">BÁN ĐẤT ĐƯỜNG 12 TAM BÌNH LIỀN KỀ VÀNH ĐAI 2, GIÁ 36TR/M2 </h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">Vị trí: Hẻm 26 đường 12, Tam Bình, Thủ Đức. Ngay nút giao Gò Dưa, Kế bên Tô Ngọc Vân và tuyến Vành Đai 2 rộng 67m, tiện di chuyển ra Quốc lộ 13, Quốc lộ 1A. - Hạ tầng đẹp, rất an ninh và...</figure>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="--slider_item"><img src="/dist/images/slide-3.jpg" alt=""/>
+              <div class="--slider_content bg-white">
+                <h4 class="text-info --slider_title">Nhà mới toanh, CHỈ 2.8TỶ. 1T 3L, 1TUM, DT 56m2, Đường 36, Hiệp Bình Chánh - Thủ... </h4>
+                <figure class="text-primary _address">Tam Bình</figure>
+                <figure class="_content">TẠI SAO PHẢI MUA NHÀ CHUNG CƯ VỚI NỔI LO CHÁY NHÀ LUÔN RÌNH RẬP. TRONG KHI BẰNG SỐ TIỀN CÓ THỂ SỞ HỮU NHÀ NGUYÊN CĂN MỚI TINH KIÊN CỐ 1 TRỆT 3 LẦU, 1TUM VỚI THIẾT KẾ PHONG CÁCH CHÂU ÂU. Cầm...</figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="swiper-container slider-thumbs bg-dark">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+          <div class="swiper-slide"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+          <div class="swiper-slide"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+          <div class="swiper-slide"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+          <div class="swiper-slide"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+          <div class="swiper-slide"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+        </div>
+      </div>
+    </section>
+    <section class="--search bg-info py-4">
+      <div class="container">
+        <h1 class="text-md-left text-center text-light text-uppercase mb-3 --search_title">Tìm kiếm nhà đất</h1>
+        <div class="row align-items-center">
+          <div class="col-md-4 mb-2">
+            <div class="--select_box" selectbox="#sell-dat">
+              <div class="--select-btn">Bán đất các loại<i class="fa fa-angle-down --select_arrow"></i></div>
+              <ul class="--select_content none-style-list">
+                <li><a href="#!" selectValue="test">Test</a></li>
+                <li><a href="#!" selectValue="test 2">Test 2</a></li>
+                <li><a href="#!" selectValue="test 3">Test 3</a></li>
+                <li><a href="#!" selectValue="test 4">Test 4</a></li>
+                <li><a href="#!" selectValue="test 5">Test 5</a></li>
+                <li><a href="#!" selectValue="test 6">Test 6</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+                <div class="--select_box --select_content" selectbox="#phuong">
+                  <div class="--select-btn">Phường<i class="fa fa-angle-down --select_arrow"></i></div>
+                  <div class="--scrollbar --select_content">
+                    <ul class="none-style-list" selectcontent="selectcontent">
+                      <li><a href="#!" selectValue="1">Phường 1</a></li>
+                      <li><a href="#!" selectValue="2">Phường 2</a></li>
+                      <li><a href="#!" selectValue="3">Phường 3</a></li>
+                      <li><a href="#!" selectValue="4">Phường 4</a></li>
+                      <li><a href="#!" selectValue="5">Phường 5</a></li>
                     </ul>
                   </div>
-                </li>
-                <li class="--js_dropdown"><a href="/">Bán đất thủ đức</a></li>
-                <li><a href="/">Cho thuê nhà thủ đức</a></li>
-                <li><a href="/">Thị trường đất</a></li>
-                <li><a href="/">Liên hệ</a></li>
+                </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <div class="--select_box bg-white" selectbox="#dientich">
+              <div class="--select-btn">Diện Tích<i class="fa fa-angle-down --select_arrow"></i></div>
+              <ul class="--select_content none-style-list">
+                <li><a href="#!" selectValue="test">Test</a></li>
               </ul>
             </div>
           </div>
+          <div class="col-md-4 mb-2">
+            <div class="--select_box bg-white" selectbox="#pricematch">
+              <div class="--select-btn">Khoảng Giá<i class="fa fa-angle-down --select_arrow"></i></div>
+              <ul class="--select_content none-style-list">
+                <li><a href="#!" selectValue="test">Test</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <div class="--select_box bg-white" selectbox="#project">
+              <div class="--select-btn">Thuộc Dự Án<i class="fa fa-angle-down --select_arrow"></i></div>
+              <ul class="--select_content none-style-list">
+                <li><a href="#!" selectValue="test">Test</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <form action="" method="POST">
+              <input id="sell-dat" hidden="hidden"/>
+              <input id="phuong" hidden="hidden"/>
+              <input id="dientich" hidden="hidden"/>
+              <input id="pricematch" hidden="hidden"/>
+              <input id="project" hidden="hidden"/>
+              <button class="btn btn-warning btn-block">Tìm Kiếm</button>
+            </form>
+          </div>
         </div>
       </div>
-    </header>
-    <footer class="bg-dark">
-      <div class="container-fluid">adsadsds</div>
+    </section>
+    <section class="bg-light">
+      <div class="container py-3">
+        <div class="--list_box bg-white">
+          <div class="row">
+            <h2 class="--list_title col-12 py-2 my-0"><a href="/detail.html">
+                 CHỈ CẦN THANH TOÁN 225 TRIỆU NHẬN NỀN NỀN 100M2 VÀ TẶNG NGAY STK 50 TRIỆU, LIÊN HỆ: 0915.224.799 </a></h2>
+            <div class="col-md-3 px-0"><a class="d-block --list_thumb" href="/detail.html"><img src="http://nhadatthuduc.com/images/com_jea/images/11523/28.jpg" alt=""/></a></div>
+            <div class="col-md-9 --list_content px-md-2 px-0">
+              <figure class="mb-2">
+                 Với quy mô dự án khu đô thị kinh tế mở Long Hưng - Biên Hòa - Đồng Nai (ngay Quốc lộ 51, ngã 3 bến gỗ vào 800m).+ Quy mô dự án 1.500 ha, thổ cư 100%. + Toàn bộ dự án được bao bọc bởi 45km sông Đồng Nai và các kênh sông lớn nhỏ trong lòng dự án. + Cơ sở hạ tầng hoàn chỉnh: Đường nhựa với các trục đườ...<small class="d-block text-muted">03/05/2018</small></figure>
+              <table class="table table-reponsive --list_footer">
+                <tbody>
+                  <tr>
+                    <td><span class="mr-2">Giá</span><span class="font-weight-bold text-primary">3.4 tỷ</span></td>
+                    <td><span class="mr-2">Diện tích</span><span class="font-weight-bold text-primary">82 m²</span></td>
+                    <td><span class="mr-2">Quận/Huyện</span><span class="font-weight-bold text-primary">Bình Thạnh, Hồ Chí Minh</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="--list_box bg-white">
+          <div class="row">
+            <h2 class="--list_title col-12 py-2 my-0"><a href="/detail.html">
+                 CHỈ CẦN THANH TOÁN 225 TRIỆU NHẬN NỀN NỀN 100M2 VÀ TẶNG NGAY STK 50 TRIỆU, LIÊN HỆ: 0915.224.799 </a></h2>
+            <div class="col-md-3 px-0"><a class="d-block --list_thumb" href="/detail.html"><img src="http://nhadatthuduc.com/images/com_jea/images/11523/28.jpg" alt=""/></a></div>
+            <div class="col-md-9 --list_content px-md-2 px-0">
+              <figure class="mb-2">
+                 Với quy mô dự án khu đô thị kinh tế mở Long Hưng - Biên Hòa - Đồng Nai (ngay Quốc lộ 51, ngã 3 bến gỗ vào 800m).+ Quy mô dự án 1.500 ha, thổ cư 100%. + Toàn bộ dự án được bao bọc bởi 45km sông Đồng Nai và các kênh sông lớn nhỏ trong lòng dự án. + Cơ sở hạ tầng hoàn chỉnh: Đường nhựa với các trục đườ...<small class="d-block text-muted">03/05/2018</small></figure>
+              <table class="table table-reponsive --list_footer">
+                <tbody>
+                  <tr>
+                    <td><span class="mr-2">Giá</span><span class="font-weight-bold text-primary">3.4 tỷ</span></td>
+                    <td><span class="mr-2">Diện tích</span><span class="font-weight-bold text-primary">82 m²</span></td>
+                    <td><span class="mr-2">Quận/Huyện</span><span class="font-weight-bold text-primary">Bình Thạnh, Hồ Chí Minh</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="--list_box bg-white">
+          <div class="row">
+            <h2 class="--list_title col-12 py-2 my-0"><a href="/detail.html">
+                 CHỈ CẦN THANH TOÁN 225 TRIỆU NHẬN NỀN NỀN 100M2 VÀ TẶNG NGAY STK 50 TRIỆU, LIÊN HỆ: 0915.224.799 </a></h2>
+            <div class="col-md-3 px-0"><a class="d-block --list_thumb" href="/detail.html"><img src="http://nhadatthuduc.com/images/com_jea/images/11523/28.jpg" alt=""/></a></div>
+            <div class="col-md-9 --list_content px-md-2 px-0">
+              <figure class="mb-2">
+                 Với quy mô dự án khu đô thị kinh tế mở Long Hưng - Biên Hòa - Đồng Nai (ngay Quốc lộ 51, ngã 3 bến gỗ vào 800m).+ Quy mô dự án 1.500 ha, thổ cư 100%. + Toàn bộ dự án được bao bọc bởi 45km sông Đồng Nai và các kênh sông lớn nhỏ trong lòng dự án. + Cơ sở hạ tầng hoàn chỉnh: Đường nhựa với các trục đườ...<small class="d-block text-muted">03/05/2018</small></figure>
+              <table class="table table-reponsive --list_footer">
+                <tbody>
+                  <tr>
+                    <td><span class="mr-2">Giá</span><span class="font-weight-bold text-primary">3.4 tỷ</span></td>
+                    <td><span class="mr-2">Diện tích</span><span class="font-weight-bold text-primary">82 m²</span></td>
+                    <td><span class="mr-2">Quận/Huyện</span><span class="font-weight-bold text-primary">Bình Thạnh, Hồ Chí Minh</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="--list_box bg-white">
+          <div class="row">
+            <h2 class="--list_title col-12 py-2 my-0"><a href="/detail.html">
+                 CHỈ CẦN THANH TOÁN 225 TRIỆU NHẬN NỀN NỀN 100M2 VÀ TẶNG NGAY STK 50 TRIỆU, LIÊN HỆ: 0915.224.799 </a></h2>
+            <div class="col-md-3 px-0"><a class="d-block --list_thumb" href="/detail.html"><img src="http://nhadatthuduc.com/images/com_jea/images/11523/28.jpg" alt=""/></a></div>
+            <div class="col-md-9 --list_content px-md-2 px-0">
+              <figure class="mb-2">
+                 Với quy mô dự án khu đô thị kinh tế mở Long Hưng - Biên Hòa - Đồng Nai (ngay Quốc lộ 51, ngã 3 bến gỗ vào 800m).+ Quy mô dự án 1.500 ha, thổ cư 100%. + Toàn bộ dự án được bao bọc bởi 45km sông Đồng Nai và các kênh sông lớn nhỏ trong lòng dự án. + Cơ sở hạ tầng hoàn chỉnh: Đường nhựa với các trục đườ...<small class="d-block text-muted">03/05/2018</small></figure>
+              <table class="table table-reponsive --list_footer">
+                <tbody>
+                  <tr>
+                    <td><span class="mr-2">Giá</span><span class="font-weight-bold text-primary">3.4 tỷ</span></td>
+                    <td><span class="mr-2">Diện tích</span><span class="font-weight-bold text-primary">82 m²</span></td>
+                    <td><span class="mr-2">Quận/Huyện</span><span class="font-weight-bold text-primary">Bình Thạnh, Hồ Chí Minh</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <footer class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-md-0 mb-2"><a class="d-block pb-2" href="/"><img src="/dist/images/logo.png" alt=""/></a>
+            <p class="text-light">As a property developers every project  we offer quality Properties and Services for our trustable customers. </p>
+            <p class="text-light">If you are interested in real estate do not wait and BUY IT NOW!</p>
+            <ul class="d-inline-flex none-style-list --social">
+              <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Liên Kết Nhanh</h4>
+            <ul class="--footer_list_link row none-style-list icon">
+              <li class="col-md-6"><a href="/">Trang chủ</a></li>
+              <li class="col-md-6"><a href="/">Giới thiệu</a></li>
+              <li class="col-md-6"><a href="/">Tin tức</a></li>
+              <li class="col-md-6"><a href="/">Quảng cáo</a></li>
+              <li class="col-md-6"><a href="/">Bán nhà </a></li>
+              <li class="col-md-6"><a href="/">Bán đất </a></li>
+              <li class="col-md-6"><a href="/contact">Hỗ trợ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Thông Tin Liên Hệ</h4>
+            <ul class="--footer_list_link none-style-list">
+              <li><i class="fa fa-home mr-1"></i>Address: PO Box 859, La Corner St, Sanfransisco, CA 52698</li>
+              <li><a href="tel:989418460"><i class="fa fa-phone mr-1"></i>Phone: 98941-84-604</a></li>
+              <li><a href="mailto:demo@vutatech.vn"><i class="fa fa-envelope mr-1"></i>Email: Demo@vutatech.vn</a></li>
+              <li><a href="http://vutatech.vn"><i class="fa fa-globe mr-1"></i>Website: Vutatech.vn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center text-light">Copyright ©2018 Bất Động Sản Template design by <a href="/">Vutatech.vn</a></div>
     </footer>
-    <script src="/dist/main/js/jquery-3.3.1.min.js"></script>
+    <script src="/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/dist/jquery/jquery-ui.min.js"></script>
+    <script src="/dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/dist/swiper/js/swiper.min.js"></script>
+    <script src="/dist/scrollbar/perfect-scrollbar.min.js"></script>
     <script src="/dist/main/js/main.js"></script>
   </body>
 </html>

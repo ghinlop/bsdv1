@@ -1,0 +1,69 @@
+.--post-slc{
+    .--select-btn{
+        background: #ddd;
+    }
+}
+.--post_price{
+    font-size: 2em;
+}
+
+.--post_box{
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    .--post_header{
+        .--post_title{
+            color: #fff;
+            background: #0077ff;
+            display: block;
+            padding: 10px 15px;
+            font-size: 1.2em;
+        }
+        .--post_title-1{
+            color: #333;
+            display: block;
+            padding: 10px 15px;
+            font-size: 1.3em;
+            &::after{
+                content: '';
+                width: 20%;
+                vertical-align: middle;
+                height: 1px;
+                background: #ddd;
+                display: inline-block;
+                margin-left: 10px;
+            }
+        }
+    }
+    .--post_body{
+        background: #fcfcfc;
+        padding: 10px 15px;
+    }
+    .--post_upload{
+        max-width: 120px;
+        cursor: pointer;
+    }
+}
+
+.ui-datepicker-prev, .ui-datepicker-next{
+    background: #fcfcfc;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    &::before{
+        content: '';
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #0077ff;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+.ui-datepicker-prev::before{
+    content: '\f104';
+}
+.ui-datepicker-next::before{
+    content: '\f105';
+}

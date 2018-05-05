@@ -1,4 +1,6 @@
 .header{
+    position: relative;
+    z-index: 10;
     .--menu_top, .--social{
         li{
             padding: 10px 0;
@@ -25,6 +27,10 @@
                 &:hover{
                     background: linear-gradient(to right, #e06e26 0%,#e06e26 50%,#f4762a 50%,#f4762a 50%,#f4762a 100%);
                     color: #fff;
+                }
+                &.warning{
+                    overflow: hidden;
+                    background: linear-gradient(90deg,#d4a84f 0,#dec143 50%,#d7753f 0,#d7ba3f 0,#d7a03f);
                 }
             }
         }
@@ -67,4 +73,79 @@
         }
     }
     
+}
+#over{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(3,3,3,0.5);
+    z-index: -10;
+    display: none;
+    &.active{
+        z-index: 10;
+        display: block;
+    }
+}
+@media screen and (min-width: 769px){
+    .ps{
+        overflow: unset!important;
+    }
+}
+@media screen and (max-width: 768px){
+    .header{
+        .--social{
+            li{
+                flex: 1;
+            }
+        }
+        .--header_bottom{
+            position: relative;
+            aside{
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                max-width: 80%;
+                z-index: 999;
+                padding: 0;
+                @include transform(translateX(125%));
+                @include effect;
+                &.active{
+                    @include transform(translateX(25%));
+                }
+                .--menu_bottom{
+                    background: #333;
+                    height: 100%;
+                    position: relative;
+                    >li{
+                        >a{
+                            text-align: left;
+                            color: #ddd;
+                            padding: 10px 15px;
+                            border-bottom: 1px solid #555;
+                            &:hover{
+                                color: #fff;
+                            }
+                        }
+                        &:last-child{
+                            >a{
+                                border-bottom: 0;
+                            }
+                        }
+                        &.close-btn{
+                            position: fixed;
+                            left: -45px;
+                            top: 10px;
+                            >a{
+                                background: #333;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
 }

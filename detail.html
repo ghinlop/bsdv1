@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/dist/fa/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/dist/swiper/css/swiper.min.css"/>
+    <link rel="stylesheet" href="/dist/jquery/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/dist/scrollbar/perfect-scrollbar.css"/>
+    <link rel="stylesheet" href="/dist/main/css/main.css"/>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBbduzeobTy7iGqvaNHyPRcO6YH6JfY&amp;callback=initMap"></script>
+    <title>Detail Page</title>
+  </head>
+  <body>
+    <header class="header container-fluid">
+      <div class="row">
+        <div class="col-12 order-md-1 order-2 bg-info">
+          <div class="container">
+            <div class="row align-items-center">                       
+              <div class="col-md-6 d-md-block d-none --social">
+                <ul class="d-inline-flex none-style-list">
+                  <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="mr-1"><a href="/register.html"><i class="fa fa-envelope-o mr-1"> </i>demo@demo.com</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-12 --social text-md-right">
+                <ul class="d-md-inline-flex d-flex text-light none-style-list">
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in mr-1"> </i>Login</a></li>
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#registerModal"><i class="fa fa-registered mr-1"> </i>Register</a></li>
+                  <li><a class="warning" href="/post.html"><i class="fa fa-pencil mr-1"> </i>Đăng bài nhanh</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 order-md-2 order-1">  
+          <div class="--header_bottom">
+            <div class="container position-relative">
+              <div class="--contact_phone_header text-uppercase font-weight-bold p-2 d-md-block d-none"><span class="text-dark mr-2">Call Us Anytime [at]</span><span class="text-info">1-880-002-0088</span></div>
+              <div class="row align-items-center">
+                <div class="col-md-2 --logo"><a class="py-md-0 py-2 text-md-left text-center" href="/"><img src="/dist/images/logo.png" alt=""/></a></div>
+                <aside class="col-md-10 col-12 text-md-right text-left">
+                  <ul class="--menu_bottom d-md-inline-flex py-md-3 text-md-center none-style-list" id="menubar" jqueryScroll="jqueryScroll">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="--js_dropdown" dropdown="dropdown"><a href="/">Bán nhà thủ đức</a>
+                      <div class="--sub_drop">
+                        <ul class="none-style-list">
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="--js_dropdown"><a href="/">Bán đất thủ đức</a></li>
+                    <li><a href="/">Cho thuê nhà thủ đức</a></li>
+                    <li><a href="/">Thị trường đất</a></li>
+                    <li><a href="/contact.html">Liên hệ</a></li>
+                    <li class="d-md-none d-sm-none d-inline close-btn"><a href="#" toggle="eventCall" tar="aside" overEvent="true"><i class="fa fa-close fa-lg"></i></a></li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="over"></div>
+    </header>
+    <div class="--auth modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="loginModalLabel">Đăng nhập</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="username"> <i class="fa fa-user fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="password"> <i class="fa fa-lock fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="password" placeholder="Mật khẩu" aria-label="password" aria-describedby="password"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block mb-2">Đăng Nhập</button>
+                <div class="row align-items-center">
+                  <div class="col-md-6 text-md-left text-center">
+                    <input class="form-control" id="remember" type="checkbox"/>
+                    <label for="remember" checked="checked">Nhớ tài khoản</label>
+                  </div>
+                  <div class="col-md-6 text-md-right text-center"><a href="#">Quên mật khẩu</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Chưa phải là thành viên? <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" aria-label="Close">Đăng ký tài khoản</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="--auth modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="registerModal">Đăng ký tài khoản</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="email" placeholder="Email Address" aria-label="email" aria-describedby="email"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Full Name" aria-label="fullname" aria-describedby="fullname"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="number" placeholder="Phone number" aria-label="phone" aria-describedby="phone"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Password" aria-label="password" aria-describedby="password"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Retype Password" aria-label="repassword" aria-describedby="repassword"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="accept" type="checkbox"/>
+                <label for="accept" checked="checked">Chấp nhận điều khoản tham gia</label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Đăng Nhập</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Đã là thành viên?<a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal" aria-label="Close">Đăng nhập</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="--image_header" imgHeaderJS="imgHeaderJS"></div>
+    <div class="container-fluid pb-5 --item_content" getImgHeader="getImgHeader">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 --item_body">
+          <div class="row">
+            <h1 class="--item_title upletter col-md-12">Bán nhà riêng tại Đường 10, Phường Hiệp Bình Phước, Thủ Đức, Tp.HCM diện tích 141m2 giá 3720 Triệu.</h1>
+            <div class="col-md-8">
+              <div class="--item_decs">
+                <h2 class="--item_sub">Mô tả chi tiết</h2>
+                <p>
+                  Vị trí thuận tiện đi về Tân Bình, Tân Phú, Bình Tân, Gò Vấp, Q. 10.
+                  Cách 200m: Siêu thị điện máy Chợ Lớn, điện máy Thiên Hòa, Điện Máy Xanh...
+                  Cách 700m: Siêu thị Pandora Tân Bình.
+                  Cách 700m sân bay Tân Sơn Nhất.
+                  Được Thiết Kế theo phong cách Châu Âu, độc đáo, lấy sáng 100% tự nhiên.
+                  - Thiết kế đa dạng về diện tích: 64 - 65 - 70 m2.
+                  - Với lối thiết kế vuông vức,
+                  - 100% các căn hộ đều có ban công.
+                  - 100% các căn đều sở hữu diện tích 2 phòng ngủ 2WC.
+                  
+                  * Kết nối các quận và trung tâm tiện ích ngoại khu:
+                  Cách 200m: Siêu thị Điện Máy Chợ Lớn, Điện Máy Thiên Hòa, Điện Máy Xanh, 30 phút thông qua các quận trung tâm 1,5,7,2, không sợ kẹt xe khói bụi.
+                  Cách 700m: Siêu thị Pandora Tân Bình. Dự án cách sân bay chi tu 10p chỉ 5p di chuyển nhanh chóng đến tuyến Metro 2.
+                  
+                  *Tiện ích nội khu:
+                  Công viên nội bộ, công viên lớn, nhỏ, phòng tập gym, trung tâm TDTT, trường mầm non, Shophouse, hồ bơi tràn bờ, trường quốc tế ngay trong dự án, siêu thị mini, siêu thị thương mại, khuôn viên rộng đến 1600m2, mật độ cây xanh 61% thoáng mát sạch sẽ thích hợp cho mọi gia đình.
+                  
+                  Liên hệ tư vấn trực tiếp: 0909 38 02 05.
+                </p>
+              </div>
+              <div class="--tab_box" tabs-role="tabs-role">
+                <div class="d-flex"><a class="--tabs_tag active" id="tab-1" href="#tab-1" tab-action="tab-action">Hình ảnh</a><a class="--tabs_tag" id="tab-2" href="#tab-2" tab-action="tab-action">Bản Đồ Vị Trí</a></div>
+                <div tabs-content="tabs-content">
+                  <div class="--tab_content active show" id="tab-1">
+                    <div slider="#content-slider" sliderThumb="#content-thumbslider">
+                      <div class="swiper-container slider-top" id="content-slider">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="--slider_item"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+                          </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                      <div class="swiper-container slider-thumbs bg-dark" id="content-thumbslider">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+                          <div class="swiper-slide"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+                          <div class="swiper-slide"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+                          <div class="swiper-slide"><img src="/dist/images/slide-1.jpg" alt=""/></div>
+                          <div class="swiper-slide"><img src="/dist/images/slide-2.jpg" alt=""/></div>
+                          <div class="swiper-slide"><img src="/dist/images/slide-3.jpg" alt=""/></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="--tab_content" id="tab-2">
+                    <div id="controls"></div>
+                    <div id="map" mapcontent="mapcontent"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="--profile_contact my-3">
+                <div class="row">
+                  <div class="col-md-4 --avatar py-2"><img src="/dist/images/noimage.jpg" alt=""/></div>
+                  <div class="col-md-8">
+                    <div class="position-relative --contact_info text-md-left text-center">
+                      <h3 class="--contact_title py-md-0 py-2">Thông Tin Liên hệ</h3>
+                      <h4 class="--contact_name">Michel Joe Desosa</h4>
+                      <ul class="--contact_social d-inline-flex none-style-list">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      </ul>
+                      <div class="--contact_bottom">
+                        <ul class="none-style-list d-md-flex">
+                          <li>                              <a class="d-block" href="#"><i class="fa fa-phone mr-2"></i>0933381282</a></li>
+                          <li><a href="#"> <i class="fa fa-envelope-o mr-2"></i>demo@demo.com</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <table class="table table-hover">
+                <thead class="bg-dark text-light text-uppercase">
+                  <tr>
+                    <th colspan="2">Thông tin cơ bản</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Loại nhà đất</td>
+                    <td>Bán nhà riêng</td>
+                  </tr>
+                  <tr>
+                    <td>Giá bán</td>
+                    <td>3.72 Tỷ</td>
+                  </tr>
+                  <tr>
+                    <td>Diện tích</td>
+                    <td>141 m²</td>
+                  </tr>
+                  <tr>
+                    <td>Tổng giá</td>
+                    <td>3.72 Tỷ</td>
+                  </tr>
+                  <tr>
+                    <td>Địa chỉ</td>
+                    <td>Hiệp Bình Phước, Thủ Đức</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-hover">
+                <thead class="bg-dark text-light text-uppercase">
+                  <tr>
+                    <th colspan="2">Thông tin bổ sung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Chiều rộng mặt tiền</td>
+                    <td>5 m</td>
+                  </tr>
+                  <tr>
+                    <td>Chiều dài</td>
+                    <td>28 m</td>
+                  </tr>
+                  <tr>
+                    <td>Hướng chính</td>
+                    <td>Tây Nam</td>
+                  </tr>
+                  <tr>
+                    <td>Đường vào rộng</td>
+                    <td>6 m</td>
+                  </tr>
+                  <tr>
+                    <td>Tầng cao</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Số phòng ngủ</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Số phòng WC</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-md-0 mb-2"><a class="d-block pb-2" href="/"><img src="/dist/images/logo.png" alt=""/></a>
+            <p class="text-light">As a property developers every project  we offer quality Properties and Services for our trustable customers. </p>
+            <p class="text-light">If you are interested in real estate do not wait and BUY IT NOW!</p>
+            <ul class="d-inline-flex none-style-list --social">
+              <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Liên Kết Nhanh</h4>
+            <ul class="--footer_list_link row none-style-list icon">
+              <li class="col-md-6"><a href="/">Trang chủ</a></li>
+              <li class="col-md-6"><a href="/">Giới thiệu</a></li>
+              <li class="col-md-6"><a href="/">Tin tức</a></li>
+              <li class="col-md-6"><a href="/">Quảng cáo</a></li>
+              <li class="col-md-6"><a href="/">Bán nhà </a></li>
+              <li class="col-md-6"><a href="/">Bán đất </a></li>
+              <li class="col-md-6"><a href="/contact">Hỗ trợ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Thông Tin Liên Hệ</h4>
+            <ul class="--footer_list_link none-style-list">
+              <li><i class="fa fa-home mr-1"></i>Address: PO Box 859, La Corner St, Sanfransisco, CA 52698</li>
+              <li><a href="tel:989418460"><i class="fa fa-phone mr-1"></i>Phone: 98941-84-604</a></li>
+              <li><a href="mailto:demo@vutatech.vn"><i class="fa fa-envelope mr-1"></i>Email: Demo@vutatech.vn</a></li>
+              <li><a href="http://vutatech.vn"><i class="fa fa-globe mr-1"></i>Website: Vutatech.vn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center text-light">Copyright ©2018 Bất Động Sản Template design by <a href="/">Vutatech.vn</a></div>
+    </footer>
+    <script src="/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/dist/jquery/jquery-ui.min.js"></script>
+    <script src="/dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/dist/swiper/js/swiper.min.js"></script>
+    <script src="/dist/scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/dist/main/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/dist/fa/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/dist/swiper/css/swiper.min.css"/>
+    <link rel="stylesheet" href="/dist/jquery/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/dist/scrollbar/perfect-scrollbar.css"/>
+    <link rel="stylesheet" href="/dist/main/css/main.css"/>
+    <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBdBbduzeobTy7iGqvaNHyPRcO6YH6JfY&amp;callback=initMap"></script>
+    <title>Post Page</title>
+  </head>
+  <body>
+    <header class="header container-fluid">
+      <div class="row">
+        <div class="col-12 order-md-1 order-2 bg-info">
+          <div class="container">
+            <div class="row align-items-center">                       
+              <div class="col-md-6 d-md-block d-none --social">
+                <ul class="d-inline-flex none-style-list">
+                  <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="mr-1"><a href="/register.html"><i class="fa fa-envelope-o mr-1"> </i>demo@demo.com</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-12 --social text-md-right">
+                <ul class="d-md-inline-flex d-flex text-light none-style-list">
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in mr-1"> </i>Login</a></li>
+                  <li class="mr-2"><a href="#" data-toggle="modal" data-target="#registerModal"><i class="fa fa-registered mr-1"> </i>Register</a></li>
+                  <li><a class="warning" href="/post.html"><i class="fa fa-pencil mr-1"> </i>Đăng bài nhanh</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 order-md-2 order-1">  
+          <div class="--header_bottom">
+            <div class="container position-relative">
+              <div class="--contact_phone_header text-uppercase font-weight-bold p-2 d-md-block d-none"><span class="text-dark mr-2">Call Us Anytime [at]</span><span class="text-info">1-880-002-0088</span></div>
+              <div class="row align-items-center">
+                <div class="col-md-2 --logo"><a class="py-md-0 py-2 text-md-left text-center" href="/"><img src="/dist/images/logo.png" alt=""/></a></div>
+                <aside class="col-md-10 col-12 text-md-right text-left">
+                  <ul class="--menu_bottom d-md-inline-flex py-md-3 text-md-center none-style-list" id="menubar" jqueryScroll="jqueryScroll">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li class="--js_dropdown" dropdown="dropdown"><a href="/">Bán nhà thủ đức</a>
+                      <div class="--sub_drop">
+                        <ul class="none-style-list">
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                          <li><a href="/">Bán nhà thủ đức</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="--js_dropdown"><a href="/">Bán đất thủ đức</a></li>
+                    <li><a href="/">Cho thuê nhà thủ đức</a></li>
+                    <li><a href="/">Thị trường đất</a></li>
+                    <li><a href="/contact.html">Liên hệ</a></li>
+                    <li class="d-md-none d-sm-none d-inline close-btn"><a href="#" toggle="eventCall" tar="aside" overEvent="true"><i class="fa fa-close fa-lg"></i></a></li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="over"></div>
+    </header>
+    <div class="--auth modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="loginModalLabel">Đăng nhập</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="username"> <i class="fa fa-user fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="password"> <i class="fa fa-lock fa-lg"></i></span></div>
+                  <input class="form-control form-control-lg" type="password" placeholder="Mật khẩu" aria-label="password" aria-describedby="password"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block mb-2">Đăng Nhập</button>
+                <div class="row align-items-center">
+                  <div class="col-md-6 text-md-left text-center">
+                    <input class="form-control" id="remember" type="checkbox"/>
+                    <label for="remember" checked="checked">Nhớ tài khoản</label>
+                  </div>
+                  <div class="col-md-6 text-md-right text-center"><a href="#">Quên mật khẩu</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Chưa phải là thành viên? <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" aria-label="Close">Đăng ký tài khoản</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="--auth modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form action="">
+          <div class="modal-content">
+            <div class="modal-header text-light bg-info">
+              <h3 class="modal-title text-uppercase" id="registerModal">Đăng ký tài khoản</h3>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <h3 aria-hidden="true">×</h3>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label="Username" aria-describedby="username"/>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="email" placeholder="Email Address" aria-label="email" aria-describedby="email"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" placeholder="Full Name" aria-label="fullname" aria-describedby="fullname"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="number" placeholder="Phone number" aria-label="phone" aria-describedby="phone"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Password" aria-label="password" aria-describedby="password"/>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" placeholder="Retype Password" aria-label="repassword" aria-describedby="repassword"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="accept" type="checkbox"/>
+                <label for="accept" checked="checked">Chấp nhận điều khoản tham gia</label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">Đăng Nhập</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <p class="mx-auto mb-0">Đã là thành viên?<a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal" aria-label="Close">Đăng nhập</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="--image_header" imgHeaderJS="imgHeaderJS"></div>
+    <div class="container-fluid pb-5 --item_content" getImgHeader="getImgHeader"><img class="d-none" src="/dist/images/post-bg.jpg" alt=""/>
+      <div class="row">
+        <div class="col-md-10 offset-md-1 --item_body">
+          <div class="row">
+            <h1 class="--item_title col-md-12">Đăng tin rao bán, cho thuê nhà đất</h1>
+            <div class="col-md-8">
+              <form action="" method="POST">
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title" href="#form-1" tab-action="tab-action">
+                       Thông tin cơ bản</div>
+                  </div>
+                  <div class="--post_body" id="form-1">
+                        <div class="form-group">
+                          <label for="title">Tiêu Đề</label>
+                          <input class="form-control" id="title" type="text"/>
+                        </div>
+                        <div class="form-group">
+                          <div class="row align-items-center">
+                            <div class="col-md-6">
+                              <label for="type">Hình Thức</label>
+                                  <div class="--select_box --post-slc" selectbox="#type">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="type" type="text" hidden="hidden"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="cate">Loại</label>
+                                  <div class="--select_box --post-slc" selectbox="#type">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">asc 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="cate" type="text" hidden="hidden"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row align-items-center">
+                            <div class="col-md-6">
+                              <label for="city">Thành Phố</label>
+                                  <div class="--select_box --post-slc" selectbox="#city">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="city" type="text" hidden="hidden"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="tinh">Tỉnh</label>
+                                  <div class="--select_box --post-slc" selectbox="#tinh">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="tinh" type="text" hidden="hidden"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row align-items-center">
+                            <div class="col-md-6">
+                              <label for="phuong">Phường</label>
+                                  <div class="--select_box --post-slc" selectbox="#phuong">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="phuong" type="text" hidden="hidden"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="duong">Loại</label>
+                                  <div class="--select_box --post-slc" selectbox="#duong">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="duong" type="text" hidden="hidden"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row align-items-center">
+                            <div class="col-md-6">
+                              <label for="price">Giá</label>
+                              <input class="form-control" id="price" type="number"/>
+                            </div>
+                            <div class="col-md-6 --post_price">
+                              <label>Tổng tiền<strong class="text-danger ml-3">0đ</strong></label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="address">Địa chỉ</label>
+                          <input class="form-control" id="address" type="text"/>
+                        </div>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Thông tin mô tả</div>
+                  </div>
+                  <div class="--post_body">
+                        <div class="form-group">
+                          <label for="desc"> <span class="text-danger">(*) </span>Tối đa chỉ 3000 ký tự</label>
+                          <textarea class="form-control" id="desc" name=""></textarea>
+                        </div>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Thông tin khác</div>
+                  </div>
+                  <div class="--post_body">
+                    <label>Quý vị nên điền đầy đủ thông tin vào các mục dưới đây để tin đăng có hiệu quả hơn </label>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="mt">Mặt tiền (m)</label>
+                              <input class="form-control" id="mt" type="text"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="widths">Đường vào (m)</label>
+                              <input class="form-control" id="widths" type="text"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label>Hướng nhà</label>
+                                  <div class="--select_box --post-slc" selectbox="#type1">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="type1" type="text" hidden="hidden"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label>Hướng ban công</label>
+                                  <div class="--select_box --post-slc" selectbox="#type2">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="type2" type="text" hidden="hidden"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="tang">Số tầng</label>
+                              <input class="form-control" id="tang" type="number"/>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="room">Số phòng ngủ</label>
+                              <input class="form-control" id="room" type="number"/>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="tolet">Số tolet</label>
+                              <input class="form-control" id="tolet" type="number"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="noithat"></label>
+                          <textarea class="form-control" id="noithat" name=""></textarea>
+                        </div>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Hình ảnh bổ sung</div>
+                  </div>
+                  <div class="--post_body">
+                        <p>Tối đa 8 ảnh với tin thường và 16 với tin VIP. Mỗi ảnh tối đa 2MB </p>
+                        <p>
+                           Tin rao có ảnh sẽ được xem nhiều hơn gấp 10 lần và được nhiều người gọi gấp 5 lần so với tin rao không có ảnh. 
+                          Hãy đăng ảnh để được giao dịch nhanh chóng!
+                        </p>
+                        <label class="d-block text-center" for="upload"><img class="--post_upload" src="/dist/images/upload.png" alt=""/></label>
+                        <input id="upload" type="file" name="" hidden="hidden"/>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Bản đồ</div>
+                  </div>
+                  <div class="--post_body"></div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Thông tin liên hệ</div>
+                  </div>
+                  <div class="--post_body">
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="name">Tên liên hệ</label>
+                              <input class="form-control" id="name" type="text"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="email">Địa chỉ email</label>
+                              <input class="form-control" id="email" type="email"/>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label for="phone">Số điện thoại</label>
+                              <input class="form-control" id="phone" type="number"/>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="cell">Số di động</label>
+                              <input class="form-control" id="cell" type="number"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="address-info">Địa chỉ liên hệ</label>
+                          <textarea class="form-control" id="address-info" name=""></textarea>
+                        </div>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_header">
+                    <div class="--post_title">Lịch đăng tin</div>
+                  </div>
+                  <div class="--post_body">
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <label for="newstype">Loại tin</label>
+                                  <div class="--select_box --post-slc" selectbox="#newstype">
+                                    <div class="--select-btn">Hình thức<i class="fa fa-angle-down --select_arrow"></i></div>
+                                    <div class="--scrollbar --select_content">
+                                      <ul class="none-style-list" selectcontent="selectcontent">
+                                        <li><a href="#!" selectValue="1">Hình thức 1</a></li>
+                                        <li><a href="#!" selectValue="2">Hình thức 2</a></li>
+                                        <li><a href="#!" selectValue="3">Hình thức 3</a></li>
+                                        <li><a href="#!" selectValue="4">Hình thức 4</a></li>
+                                        <li><a href="#!" selectValue="5">Hình thức 5</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              <input id="newstype" type="text" hidden="hidden"/>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="first-date">Ngày bắt đầu</label>
+                              <input class="form-control" id="first-date" type="text" datepicker="datepicker"/>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="last-date">Ngày kết thúc</label>
+                              <input class="form-control" id="last-date" type="text" datepicker="datepicker"/>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="--post_box">
+                  <div class="--post_body text-center">
+                    <button class="btn btn-primary mr-2">Đăng tin không cần tài khoản</button>
+                    <button class="btn btn-warning mt-md-0 mt-1">Xem trước</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-4">
+              <div style="text-align: justify; color: #666;">Với hơn <span style="color: Red; font-size: 14px;">100 000</span> lượt truy cập mỗi ngày, Batdongsan.com.vn đã đạt mức tăng trưởng 300% chỉ trong 9 tháng đầu năm 2011 và tiếp tục khẳng định vị thế là nơi rao vặt nhà đất, quảng cáo nhà đất hiệu quả nhất hiện nay. Rao vặt nhà đất trên Batdongsan.com.vn là phương án tối ưu nhất cho nhu cầu bán, cho thuê nhà đất của Quý vị.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-md-0 mb-2"><a class="d-block pb-2" href="/"><img src="/dist/images/logo.png" alt=""/></a>
+            <p class="text-light">As a property developers every project  we offer quality Properties and Services for our trustable customers. </p>
+            <p class="text-light">If you are interested in real estate do not wait and BUY IT NOW!</p>
+            <ul class="d-inline-flex none-style-list --social">
+              <li class="mr-1"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li class="mr-1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Liên Kết Nhanh</h4>
+            <ul class="--footer_list_link row none-style-list icon">
+              <li class="col-md-6"><a href="/">Trang chủ</a></li>
+              <li class="col-md-6"><a href="/">Giới thiệu</a></li>
+              <li class="col-md-6"><a href="/">Tin tức</a></li>
+              <li class="col-md-6"><a href="/">Quảng cáo</a></li>
+              <li class="col-md-6"><a href="/">Bán nhà </a></li>
+              <li class="col-md-6"><a href="/">Bán đất </a></li>
+              <li class="col-md-6"><a href="/contact">Hỗ trợ</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-2">
+            <h4 class="--footer_title text-uppercase">Thông Tin Liên Hệ</h4>
+            <ul class="--footer_list_link none-style-list">
+              <li><i class="fa fa-home mr-1"></i>Address: PO Box 859, La Corner St, Sanfransisco, CA 52698</li>
+              <li><a href="tel:989418460"><i class="fa fa-phone mr-1"></i>Phone: 98941-84-604</a></li>
+              <li><a href="mailto:demo@vutatech.vn"><i class="fa fa-envelope mr-1"></i>Email: Demo@vutatech.vn</a></li>
+              <li><a href="http://vutatech.vn"><i class="fa fa-globe mr-1"></i>Website: Vutatech.vn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center text-light">Copyright ©2018 Bất Động Sản Template design by <a href="/">Vutatech.vn</a></div>
+    </footer>
+    <script src="/dist/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/dist/jquery/jquery-ui.min.js"></script>
+    <script src="/dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/dist/swiper/js/swiper.min.js"></script>
+    <script src="/dist/scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/dist/main/js/main.js"></script>
+  </body>
+</html>

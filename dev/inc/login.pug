@@ -1,0 +1,33 @@
+#loginModal.--auth.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginModalLabel', aria-hidden='true')
+    .modal-dialog(role='document')
+        form(action="")
+            .modal-content
+                .modal-header.text-light.bg-info
+                    h3#loginModalLabel.modal-title.text-uppercase Đăng nhập
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        h3(aria-hidden='true') ×
+                .modal-body
+                    .form-group
+                        .input-group
+                            .input-group-prepend
+                                span#username.input-group-text  
+                                    i.fa.fa-user.fa-lg
+                            input.form-control.form-control-lg(type='text', placeholder='Username', aria-label='Username', aria-describedby='username')
+                    .form-group
+                        .input-group
+                            .input-group-prepend
+                                span#password.input-group-text  
+                                    i.fa.fa-lock.fa-lg
+                            input.form-control.form-control-lg(type='password', placeholder='Mật khẩu', aria-label='password', aria-describedby='password')
+                    .form-group
+                        button.btn.btn-primary.btn-lg.btn-block.mb-2 Đăng Nhập
+                        .row.align-items-center
+                            .col-md-6.text-md-left.text-center
+                                input#remember.form-control(type="checkbox")
+                                label(for="remember" checked) Nhớ tài khoản
+                            .col-md-6.text-md-right.text-center
+                                a(href="#") Quên mật khẩu
+                .modal-footer
+                    p.mx-auto.mb-0
+                        | Chưa phải là thành viên? 
+                        a(href='#', data-toggle='modal', data-target='#registerModal' data-dismiss='modal', aria-label='Close') Đăng ký tài khoản

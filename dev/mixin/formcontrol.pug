@@ -1,0 +1,154 @@
+include ./select
+mixin formbasic
+    .form-group
+        label(for="title") Tiêu Đề
+        input#title.form-control(type="text")
+    .form-group
+        .row.align-items-center
+            .col-md-6
+                label(for="type") Hình Thức
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#type' ,'Hình thức', '--post-slc')
+                input#type(type="text" hidden)
+            .col-md-6
+                label(for="cate") Loại
+                - var data = [{id: 1, name: 'asc 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#type' ,'Hình thức', '--post-slc')
+                input#cate(type="text" hidden)
+    .form-group
+        .row.align-items-center
+            .col-md-6
+                label(for="city") Thành Phố
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#city' ,'Hình thức', '--post-slc')
+                input#city(type="text" hidden)
+            .col-md-6
+                label(for="tinh") Tỉnh
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#tinh' ,'Hình thức', '--post-slc')
+                input#tinh(type="text" hidden)
+    .form-group
+        .row.align-items-center
+            .col-md-6
+                label(for="phuong") Phường
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#phuong' ,'Hình thức', '--post-slc')
+                input#phuong(type="text" hidden)
+            .col-md-6
+                label(for="duong") Loại
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#duong' ,'Hình thức', '--post-slc')
+                input#duong(type="text" hidden)
+    .form-group
+        .row.align-items-center
+            .col-md-6
+                label(for="price") Giá
+                input#price.form-control(type="number")
+            .col-md-6.--post_price
+                label Tổng tiền
+                    strong.text-danger.ml-3 0đ
+    .form-group
+        label(for="address") Địa chỉ
+        input#address.form-control(type="text")
+mixin formdesc
+    .form-group
+        label(for="desc") 
+            span.text-danger (*) 
+            |Tối đa chỉ 3000 ký tự
+        textarea#desc.form-control(name="")
+mixin formortherdetail
+    .form-group
+        .row
+            .col-md-6
+                label(for="mt") Mặt tiền (m)
+                input#mt.form-control(type="text")
+            .col-md-6
+                label(for="widths") Đường vào (m)
+                input#widths.form-control(type="text")
+    .form-group
+        .row
+            .col-md-6
+                label Hướng nhà
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#type1' ,'Hình thức', '--post-slc')
+                input#type1(type="text" hidden)
+            .col-md-6
+                label Hướng ban công
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#type2' ,'Hình thức', '--post-slc')
+                input#type2(type="text" hidden)
+    .form-group
+        .row
+            .col-md-4
+                label(for="tang") Số tầng
+                input#tang.form-control(type="number")
+            .col-md-4
+                label(for="room") Số phòng ngủ
+                input#room.form-control(type="number")
+            .col-md-4
+                label(for="tolet") Số tolet
+                input#tolet.form-control(type="number")
+    .form-group
+        label(for="noithat")
+        textarea#noithat.form-control(name="")
+mixin formupload
+    p Tối đa 8 ảnh với tin thường và 16 với tin VIP. Mỗi ảnh tối đa 2MB 
+    p 
+        |Tin rao có ảnh sẽ được xem nhiều hơn gấp 10 lần và được nhiều người gọi gấp 5 lần so với tin rao không có ảnh. 
+        |Hãy đăng ảnh để được giao dịch nhanh chóng!
+    label(for="upload").d-block.text-center
+        img.--post_upload(src="/dist/images/upload.png", alt="")
+    input#upload(type="file", name="", hidden)
+mixin formcontact
+    .form-group
+        .row
+            .col-md-6
+                label(for="name") Tên liên hệ
+                input#name.form-control(type="text")
+            .col-md-6
+                label(for="email") Địa chỉ email
+                input#email.form-control(type="email")
+        .row
+            .col-md-6
+                label(for="phone") Số điện thoại
+                input#phone.form-control(type="number")
+            .col-md-6
+                label(for="cell") Số di động
+                input#cell.form-control(type="number")
+    .form-group
+        label(for="address-info") Địa chỉ liên hệ
+        textarea#address-info.form-control(name="")
+mixin formcalc
+    .form-group
+        .row
+            .col-md-4
+                label(for="newstype") Loại tin
+                - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+                +select(data, '#newstype' ,'Hình thức', '--post-slc')
+                input#newstype(type="text" hidden)
+            .col-md-4
+                label(for="first-date") Ngày bắt đầu
+                input#first-date.form-control(type="text", datepicker)
+            .col-md-4
+                label(for="last-date") Ngày kết thúc
+                input#last-date.form-control(type="text", datepicker)
+mixin contactpage
+    
+    .row
+        .col-md
+            - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+            +select(data, '#type1' ,'Chọn lĩnh vực', '--post-slc')
+            .form-group
+                input.form-control#type1(type="text" hidden)
+        .col-md
+            - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+            +select(data, '#type2' ,'Tỉnh/Thành Phố', '--post-slc')
+            .form-group
+                input.form-control#type2(type="text" hidden)
+        .col-md
+            - var data = [{id: 1, name: 'Hình thức 1'},{id: 2, name: 'Hình thức 2'},{id: 3, name: 'Hình thức 3'}, {id: 4, name: 'Hình thức 4'}, {id: 5, name: 'Hình thức 5'}]
+            +select(data, '#type3' ,'Quận huyện', '--post-slc')
+            .form-group
+                input.form-control#type3(type="text" hidden)
+
+

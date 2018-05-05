@@ -1,0 +1,102 @@
+.--list_box{
+    padding: 0 15px;
+    background: #fff;
+    // border: 1px solid #ddd;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px 1px #ddd;
+    .--list_thumb{
+        height: 170px;
+        overflow-y: hidden;
+        img{
+            width: 100%;
+            min-height: 100%;
+        }
+    }
+    .--list_title{
+        font-size: 1.2em;
+        overflow-x: hidden;
+    }
+    .--list_content{
+        position: relative;
+    }
+    .--list_footer{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        margin: 0;
+        tr > td{
+            border-right: 1px solid #ddd;
+            padding: 8px 15px;
+            width: auto;
+            &:last-child{
+                border: 0;
+            }
+        }
+    }
+}
+
+.--item_content{
+    position: relative;
+    .--item_body{
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0px -1px 5px rgba(0,0,0,.1);
+    }
+    .--item_title{
+        position: relative;
+        @include transform(translateY(-50%));
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 1.5em;
+        z-index: 2;
+        border-bottom: 1px solid #ddd;
+    }
+}
+#map{
+    min-height: 400px;
+}
+@media screen and (max-width: 768px){
+    .--list_box{
+        .--list_title{
+            font-size: 0.85em;
+        }
+        .--list_content{
+            font-size: 0.9em;
+            padding: 8px 15px;
+            figure{
+                padding: 0 15px;
+            }
+        }
+        .--list_footer{
+            position: static;
+            table{
+                display: block;
+            }
+            tr > td{
+                border-bottom: 0;
+                span{
+                    display: block;
+                    text-align: center;
+                    font-size: .6em;
+                }
+            }
+        }
+    }
+    .--search_title{
+        font-size: 1.3em;
+    }
+    .--item_content{
+        .--item_title{
+            font-size: 1.3em;
+            @include transform(translateY(0%));
+        }
+    }
+    .--item_sub{
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+}

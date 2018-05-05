@@ -19,7 +19,7 @@ gulp.task('sass', () => {
         )
         .pipe(sass())
         .pipe(minify())
-        .pipe(gulp.dest('/dist/main/css'))
+        .pipe(gulp.dest('./dist/main/css'))
         .pipe(liveReload())
 });
 
@@ -39,7 +39,9 @@ gulp.task('pug', () => {
 gulp.task('watch-sass', () => {
     liveReload.listen();
     gulp.watch([
-        './dev/scss/**/*.scss'],
+        './dev/scss/**/*.scss',
+        './dev/scss/*.scss'
+        ],
         ['sass']);
 })
 gulp.task('watch-pug', () => {

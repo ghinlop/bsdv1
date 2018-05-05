@@ -1,0 +1,11 @@
+mixin select(data, idInput, nameBtn, className)
+    - var vals = data
+    .--select_box(selectbox=idInput class=className)
+        .--select-btn=nameBtn
+            i.fa.fa-angle-down.--select_arrow
+        .--scrollbar.--select_content
+            ul.none-style-list(selectcontent)
+                each val in vals
+                    li
+                        a(href="#!" selectValue=val.id)=val.name
+                    

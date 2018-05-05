@@ -1,0 +1,24 @@
+.--tab_box{
+    .--tabs_tag{
+        text-align: center;
+        padding: 10px;
+        background: #666;
+        color: #fff;  
+        flex: 1;      
+        &.active{
+            background: #0088ff;
+        }
+    }
+    .--tab_content{
+        background: #fff;
+        height: auto;
+        opacity: 0;
+        display: none;
+        &.active{
+            display: block;
+        }
+        &.show{
+            opacity: 1;
+        }
+    }
+}

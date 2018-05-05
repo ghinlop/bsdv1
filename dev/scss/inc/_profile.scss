@@ -1,0 +1,82 @@
+.--profile_contact{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    .--avatar{
+        img{
+            max-width: 100%;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+            border: 3px solid #fff;
+        }
+    }
+    .--contact_title{
+        font-size: 1.6em;
+        position: relative;
+        border-bottom: 1px solid #ddd;
+        color: #0099ff;
+        padding-bottom: 10px;
+        &::before{
+            content: '';
+            width: 50%;
+            height: 1px;
+            background: #0099ff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include transform(translateY(50%));
+        }
+    }
+    .--contact_social{
+        a{
+            display: block;
+            padding: 5px 8px;
+            background: #0099ff;
+            margin-left: 5px;
+            width: 25px;
+            height: 25px;
+            color: #fff;
+            position: relative;
+            .fa{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+            }
+            &:hover{
+                background: #0077ff;
+            }
+        }
+    }
+    .--contact_info{
+        height: 100%;
+    }
+    .--contact_bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        width: 100%;
+        background: #0099ff;
+        li{
+            flex: 1;
+        }
+        a{
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-align: center;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .--profile_contact{
+        .--contact_bottom{
+            position: static;
+            a:first-child{
+                border-bottom: 1px dotted #0077ff;
+            }
+        }
+    }
+}

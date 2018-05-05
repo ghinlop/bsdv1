@@ -1,0 +1,38 @@
+#registerModal.--auth.modal.fade(tabindex='-1', role='dialog', aria-labelledby='registerModal', aria-hidden='true')
+    .modal-dialog(role='document')
+        form(action="")
+            .modal-content
+                .modal-header.text-light.bg-info
+                    h3#registerModal.modal-title.text-uppercase Đăng ký tài khoản
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        h3(aria-hidden='true') ×
+                .modal-body
+                    .row
+                        .col-12
+                            .form-group
+                                input.form-control.form-control-lg(type='text', placeholder='Username', aria-label='Username', aria-describedby='username') 
+                        .col-12
+                            .form-group
+                                input.form-control.form-control-lg(type='email', placeholder='Email Address', aria-label='email', aria-describedby='email')
+                        .col-6
+                            .form-group
+                                input.form-control.form-control-lg(type='text', placeholder='Full Name', aria-label='fullname', aria-describedby='fullname') 
+                        .col-6
+                            .form-group
+                                input.form-control.form-control-lg(type='number', placeholder='Phone number', aria-label='phone', aria-describedby='phone')
+                        .col-6
+                            .form-group
+                                input.form-control.form-control-lg(type='password', placeholder='Password', aria-label='password', aria-describedby='password') 
+                        .col-6
+                            .form-group
+                                input.form-control.form-control-lg(type='password', placeholder='Retype Password', aria-label='repassword', aria-describedby='repassword')                          
+                    .form-group
+                        input#accept.form-control(type="checkbox")
+                        label(for="accept" checked) Chấp nhận điều khoản tham gia
+                    .form-group
+                        button.btn.btn-primary.btn-lg.btn-block Đăng Nhập
+                        
+                .modal-footer
+                    p.mx-auto.mb-0
+                        |Đã là thành viên?
+                        a(href='#', data-toggle='modal', data-target='#loginModal' data-dismiss='modal', aria-label='Close') Đăng nhập

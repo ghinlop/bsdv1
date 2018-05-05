@@ -1,0 +1,65 @@
+extends ./layout/home
+include ./mixin/widget
+block title
+    title Post Page
+block index
+    include ./inc/header
+    include ./inc/imgHeader
+    include ./mixin/formcontrol
+    .container-fluid.pb-5.--item_content(getImgHeader)
+        img.d-none(src="/dist/images/post-bg.jpg", alt="")
+        .row
+            .col-md-10.offset-md-1.--item_body
+                .row
+                    h1.--item_title.col-md-12
+                        |Đăng tin rao bán, cho thuê nhà đất
+                    .col-md-8
+                        form(action="" method="POST")
+                            .--post_box
+                                .--post_header
+                                    .--post_title(href="#form-1" tab-action) 
+                                        |Thông tin cơ bản
+                                .--post_body#form-1
+                                    +formbasic
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Thông tin mô tả
+                                .--post_body
+                                    +formdesc
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Thông tin khác
+                                .--post_body
+                                    label Quý vị nên điền đầy đủ thông tin vào các mục dưới đây để tin đăng có hiệu quả hơn 
+                                    +formortherdetail
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Hình ảnh bổ sung
+                                .--post_body
+                                    +formupload
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Bản đồ
+                                .--post_body
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Thông tin liên hệ
+                                .--post_body
+                                    +formcontact
+                            .--post_box
+                                .--post_header
+                                    .--post_title
+                                        |Lịch đăng tin
+                                .--post_body
+                                    +formcalc
+                            .--post_box
+                                .--post_body.text-center
+                                    button.btn.btn-primary.mr-2 Đăng tin không cần tài khoản
+                                    button.btn.btn-warning.mt-md-0.mt-1 Xem trước
+                    .col-md-4
+                        +wd2
