@@ -6,47 +6,21 @@ section.--search.bg-info.py-4
         h1.text-md-left.text-center.text-light.text-uppercase.mb-3.--search_title Tìm kiếm nhà đất
         .row.align-items-center
             .col-md-4.mb-2
-                .--select_box(selectbox="#sell-dat")
-                    .--select-btn Bán đất các loại
-                        i.fa.fa-angle-down.--select_arrow
-                    ul.--select_content.none-style-list
-                        li
-                            a(href="#!" selectValue="test") Test
-                        li
-                            a(href="#!" selectValue="test 2") Test 2
-                        li
-                            a(href="#!" selectValue="test 3") Test 3
-                        li
-                            a(href="#!" selectValue="test 4") Test 4
-                        li
-                            a(href="#!" selectValue="test 5") Test 5
-                        li
-                            a(href="#!" selectValue="test 6") Test 6
-
+                - var data = [{id: 1, name: 'Phường 1'},{id: 2, name: 'Phường 2'},{id: 3, name: 'Phường 3'}, {id: 4, name: 'Phường 4'}, {id: 5, name: 'Phường 5'}]
+                +select(data, '#sell-dat' ,'Phường', '--select_content')
             .col-md-4.mb-2
                 - var data = [{id: 1, name: 'Phường 1'},{id: 2, name: 'Phường 2'},{id: 3, name: 'Phường 3'}, {id: 4, name: 'Phường 4'}, {id: 5, name: 'Phường 5'}]
                 +select(data, '#phuong' ,'Phường', '--select_content')
             .col-md-4.mb-2
-                .--select_box.bg-white(selectbox="#dientich")
-                    .--select-btn Diện Tích
-                        i.fa.fa-angle-down.--select_arrow
-                    ul.--select_content.none-style-list
-                        li
-                            a(href="#!" selectValue="test") Test
+                - var data = [{id: 1, name: 'Phường 1'},{id: 2, name: 'Phường 2'},{id: 3, name: 'Phường 3'}, {id: 4, name: 'Phường 4'}, {id: 5, name: 'Phường 5'}]
+                +select(data, '#dientich' ,'Phường', '--select_content')
             .col-md-4.mb-2
-                .--select_box.bg-white(selectbox="#pricematch")
-                    .--select-btn Khoảng Giá
-                        i.fa.fa-angle-down.--select_arrow
-                    ul.--select_content.none-style-list
-                        li
-                            a(href="#!" selectValue="test") Test
+                - var data = [{id: 1, name: 'Phường 1'},{id: 2, name: 'Phường 2'},{id: 3, name: 'Phường 3'}, {id: 4, name: 'Phường 4'}, {id: 5, name: 'Phường 5'}]
+                +select(data, '#pricematch' ,'Phường', '--select_content')
             .col-md-4.mb-2
-                .--select_box.bg-white(selectbox="#project")
-                    .--select-btn Thuộc Dự Án
-                        i.fa.fa-angle-down.--select_arrow
-                    ul.--select_content.none-style-list
-                        li
-                            a(href="#!" selectValue="test") Test
+                - var data = [{id: 1, name: 'Phường 1'},{id: 2, name: 'Phường 2'},{id: 3, name: 'Phường 3'}, {id: 4, name: 'Phường 4'}, {id: 5, name: 'Phường 5'}]
+                +select(data, '#project' ,'Phường', '--select_content')
+            
             .col-md-4.mb-2
                 form(action="" method="POST")
                     input#sell-dat(hidden)

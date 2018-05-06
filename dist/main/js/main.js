@@ -167,6 +167,7 @@ function slcBtn(target) {
             var idTarget = this.attributes[1].nodeValue
             $(this).click((e) => {
                 let actClass = $(this).hasClass('active')
+                $(target).removeClass('active')
                 if(actClass){
                     $(this).removeClass('active')
                 }else{
