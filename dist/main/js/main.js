@@ -65,6 +65,12 @@ $(document).ready(() => {
        
     }
 
+    if($('[dclick]').length > 0){
+        $('[dclick]').click(function(e){
+            e.preventDefault();
+        })
+    }
+
     var currentID = null;
     $('[tabs-role]').find('[tab-action]').click((e) => {
         e.preventDefault();
@@ -160,10 +166,18 @@ function slcBtn(target) {
             let parentThis = $(this);
             var idTarget = this.attributes[1].nodeValue
             $(this).click((e) => {
-                $(this).addClass('active')
+                let actClass = $(this).hasClass('active')
+                if(actClass){
+                    $(this).removeClass('active')
+                }else{
+                    $(this).addClass('active')
+                }
+                console.log($(target).hasClass('active'))
             })
             $(this).find('[selectcontent]').find('li a').click(function (e) {
+                controlTarget = false;
                 let currentTxt = $(this).text();
+                // $(target).removeClass('active')
                 if (currentTxt !== title) {
                     $(parentThis).find('.--select-btn').html(`
                     ${currentTxt}
@@ -172,9 +186,6 @@ function slcBtn(target) {
                 }
                 selInput(idTarget, $(this))
             })
-        },
-        function () {
-            $(this).removeClass('active')
         }
     )
 }
